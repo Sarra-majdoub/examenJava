@@ -1,5 +1,6 @@
 abstract class Product {
     protected int id;
+
     protected String name;
     protected float price;
     protected int Quantity;
@@ -52,16 +53,13 @@ class Jackets extends Product {
                 ",size= "+size+
                 '}';
     }
-
 }
 class Phone extends Product{
-
     protected String brand;
     public Phone(int id, String name, float price, int Quantity, String brand){
         super(id,name,price,Quantity);
         this.brand=brand;
     }
-
     @Override
     public String toString() {
         return "{" +

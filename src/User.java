@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class User {
+ abstract class  User {
     protected String username;
     protected String password;
     protected String role;
@@ -22,5 +22,15 @@ class User {
     public String getRole() {
         return role;
     }
+}
+class Admin extends User{
+     public Admin(String username, String password, String role) {
+        super(username, password, role);
+    }
+}
+class Customer extends User{
 
+    public Customer(String username, String password, String role) {
+        super(username, password, role);
+    }
 }

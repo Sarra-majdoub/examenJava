@@ -12,6 +12,16 @@ public class ProductManager {
             System.out.println(product.toString());
         }
     }
+    void updateQuantityAfterOrdering(int ProductId, int q){
+
+        for( Product product: products){
+
+            if( product.getId()==ProductId){
+
+                product.setStockQuantity(product.getStockQuantity()-q);
+            }
+        }
+    };
     public void addProduct(Product newProduct) {
         for (Product product : products){
             if (newProduct.getId()==product.getId()){

@@ -9,7 +9,12 @@ public class ShoppingCart {
     }
 
     void addToCart(Product p, int quantity){
+        if( cart.containsKey(p)){
+
+            cart.put( p , cart.get(p)+quantity );
+        }else{
         cart.put(p, quantity);
+        }
     }
 
     float totalAmount(){
@@ -21,6 +26,9 @@ public class ShoppingCart {
         }
         return s;
     }
+    int getQuantityByProduct(Product p){
+        return cart.get(p);
+    }
 
     void display(){
         if (cart.isEmpty()) {
@@ -31,17 +39,13 @@ public class ShoppingCart {
                 cart.entrySet()){
             System.out.println("you cart :");
             System.out.println(" { name:"+ set.getKey().getName() +", Id: "+set.getKey().getId()+
-                    " quantity: " + set.getValue()+" , price :" +set.getKey().getPrice() +" } ");
+                    " ,quantity: " + set.getValue()+" , price :" +set.getKey().getPrice() +" } ");
             }
         }
     }
     void deleteFromCart(Product p){
-        if ( cart.containsKey(p)){
-            cart.remove(p);
-            System.out.println("Item deleted");
-        }else{
-            System.out.println("your cart does not contain the product you want to delete");
-        }
+        cart.remove(p);
+        System.out.println("Item deleted");
     }
 
     void updatQuantity(Product p , int newQuantity){

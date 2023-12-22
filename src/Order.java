@@ -14,10 +14,10 @@ public class Order {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter your address: ");
+        System.out.println("Enter your address : ");
         String address = scanner.nextLine();
 
-        System.out.println("e-mail address: ");
+        System.out.println("email address (example@mail.com): ");
         String mail= scanner.nextLine();
 
         this.OrderId=OrderId;
@@ -32,12 +32,13 @@ public class Order {
     void display(){
         System.out.println("-------------order----------");
         System.out.println("name: "+userName);
-        System.out.println("address: "+address);
+        System.out.println("YOUR ORDER IS BEING SHIPPED TO :");
+        System.out.println("   address: "+address);
+        System.out.println("Shipping Method: "+ shippingMethod.name);
         System.out.println("Your shipping cost: "+  shippingMethod.cost );
         System.out.println("Your amount: "+  totalAmount );
         System.out.println("Your total  amount: "+  totalAmount+shippingMethod.cost );
-        System.out.println("Shipping Methode: "+ shippingMethod.name);
-        System.out.println("A verification e-mail is going to be sent to you!");
+        System.out.println(" #order"+OrderId+"\n Thank you "+userName+"!"+" Your order is confirmed ");
 
         this.totalAmount=this.totalAmount+shippingMethod.cost;
     }

@@ -14,8 +14,7 @@ public class App {
 
     private static ShoppingCart shoppingCart = new ShoppingCart();
     private static List<Order> orderHistory = new ArrayList<>();
-
-
+    private static Order newOrder;
     public static void main(String[] args) {
 
         //adding our products
@@ -36,20 +35,22 @@ public class App {
         p.addProduct(jacket3);
 
         //adding users that have already signed in before
-        User user1= new User("sarra","123","customer");
-        User user2= new User("iyed","123","customer");
-        User user3= new User("yassine","0000","customer");
+        User customer1= new Customer("sarra","123","customer");
+        User customer2= new Customer("iyed","123","customer");
+        User customer3= new Customer("yassine","0000","customer");
 
-        users.add(user1);
-        users.add(user2);
-        users.add(user3);
+        users.add(customer1);
+        users.add(customer2);
+        users.add(customer1);
 
+        User admin= new Admin("majdoub","589","admin");
+        users.add(admin);
         /*--------------------------------------------------------------------------------*/
 
         System.out.println("You are currently using our E-commerce app ! ");
 
-        int choice=0 ;
-        while (choice!=8) {
+        int choice ;
+        while (true) {
             Menu();
             choice =Choice();
             switch (choice) {
@@ -79,11 +80,13 @@ public class App {
                     logout(currentUser);
                     break;
                 case 8:
-                    exit();
-                    break;
-                case 9:
                     shoppingCart.display();
                     System.out.println("your total amount is :"+shoppingCart.totalAmount() );
+                    break;
+                case 9:
+                    //allow admins to manage products
+                case 10:
+                    exit();
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again, choose : 1 , 2 , 3 , 4 , 5 , 6 , 7  ou 8 ");
@@ -109,8 +112,8 @@ public class App {
         System.out.println("5. update your cart ");
         System.out.println("6. Order Processing");
         System.out.println("7. Logout");
-        System.out.println("8. Exit");
-        System.out.println("9. view your cart ");
+        System.out.println("8. view your cart ");
+        System.out.println("9. Exit");
         System.out.print("Enter your choice: ");
     }
 
@@ -132,7 +135,6 @@ public class App {
             System.out.print("Enter your role (admin /customer): ");
             role = scanner.nextLine();
         }
-
 
         User authenticatedUser = authenticateUser(username, password,role);
 
@@ -181,7 +183,10 @@ public class App {
 
                 shoppingCart.addToCart(selectedProduct,quantity);
 
+                p.updateQuantityAfterOrdering(productId,quantity);
+
                 System.out.println("Product added to the cart.");
+
                 System.out.println("Your total amount is : " + shoppingCart.totalAmount());
 
             } else{
@@ -208,7 +213,16 @@ public class App {
         Product toBeDeletedProduct = exist(productId,p.products);
 
         if (toBeDeletedProduct != null) {
-            shoppingCart.deleteFromCart(toBeDeletedProduct);
+           if (shoppingCart.cart.containsKey(toBeDeletedProduct)){
+
+                 int quantityOrdered=shoppingCart.getQuantityByProduct(toBeDeletedProduct);
+
+                 shoppingCart.deleteFromCart(toBeDeletedProduct);
+
+                 p.updateQuantityAfterOrdering(productId,-quantityOrdered);
+           }else{
+               System.out.println("your cart does not contain the product you want to delete");
+           }
         } else {
             System.out.println("the Id provided does not match any product .");
         }
@@ -218,7 +232,8 @@ public class App {
             System.out.println("Please log in first.");
             return;
         }
-        System.out.println("Enter the product ID to update the quantity : ");
+        System.out.println("Enter the product ID to update " +
+                "(quantity || Shipping Method || address )3" + ": ");
 
         int productId = scanner.nextInt();
 
@@ -226,11 +241,13 @@ public class App {
         Product toBeUpdatedProduct = exist(productId,p.products);
 
         if (toBeUpdatedProduct != null) {
-            System.out.println("Enter the new quantity : ");
-            int x = scanner.nextInt();
-            shoppingCart.updatQuantity(toBeUpdatedProduct,x);
-
-
+            if (shoppingCart.cart.containsKey(toBeUpdatedProduct)) {
+                System.out.println("Enter the new quantity : ");
+                int x = scanner.nextInt();
+                shoppingCart.updatQuantity(toBeUpdatedProduct, x);
+            }else{
+                System.out.println("your cart does not contain the product you want to delete");
+            }
         } else {
             System.out.println("the Id provided does not match any product .");
         }
@@ -246,7 +263,7 @@ public class App {
         Random random = new Random();
         int OrderId= random.nextInt(100000);
 
-        Order newOrder= new Order(OrderId,currentUser.getUsername(),shoppingCart.totalAmount());
+        newOrder= new Order(OrderId,currentUser.getUsername(),shoppingCart.totalAmount());
 
         String method;
 
