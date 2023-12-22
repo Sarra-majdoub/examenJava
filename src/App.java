@@ -16,7 +16,6 @@ public class App {
     private static List<Order> orderHistory = new ArrayList<>();
     private static Order newOrder;
     public static void main(String[] args) {
-
         //adding our products
         Product phone1 = new Phone(1, "13pro", 500, 8, "Apple");
         Product phone2 = new Phone(2, "14pro", 700, 5, "Apple");
@@ -25,7 +24,6 @@ public class App {
         Product jacket1= new Jackets(4, "j1", 50, 40, "M");
         Product jacket2= new Jackets(5, "j2", 30, 40, "S");
         Product jacket3= new Jackets(6, "j3", 20, 3, "XL");
-
 
         p.addProduct(phone1);
         p.addProduct(phone2);
@@ -116,8 +114,6 @@ public class App {
         System.out.println("9. Exit");
         System.out.print("Enter your choice: ");
     }
-
-
     public static User login(){
         Scanner scanner = new Scanner(System.in);
 

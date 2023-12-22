@@ -3,10 +3,10 @@ public class Shipping {
     protected float cost;
     public Shipping(String name) {
         this.name = name;
-        if ( name.equals("StandarShipping") ){
-            this.cost=5;
-        }else{
-            this.cost=10;
+        if (name.equals("StandarShipping")) {
+            this.cost = 5;
+        } else {
+            this.cost = 10;
         }
     }
     static void display(){
