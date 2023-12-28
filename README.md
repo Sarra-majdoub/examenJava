@@ -56,7 +56,7 @@ for their respective
 product types.
 
 ## How to run
-` &nbsp; Clone the repository: git clone  https://github.com/Sarra-majdoub/examenJava.git
-&nbsp; Compile the Java files: javac -d . src/*.java
-&nbsp; Run the application: java Main `
+#### Clone the repository: git clone ( https://github.com/Sarra-majdoub/examenJava.git )
+#### Compile the Java files: javac -d . src/*.java
+#### Run the application: java Main `
 
