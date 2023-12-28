@@ -228,8 +228,7 @@ public class App {
             System.out.println("Please log in first.");
             return;
         }
-        System.out.println("Enter the product ID to update " +
-                "(quantity || Shipping Method || address )3" + ": ");
+        System.out.println("Enter the product ID to update : ");
 
         int productId = scanner.nextInt();
 

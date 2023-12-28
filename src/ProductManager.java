@@ -9,7 +9,7 @@ public class ProductManager {
     }
     public void displayProducts() {
         for (Product product : products) {
-            System.out.println(product.toString());
+            System.out.println(product.displayInfo());
         }
     }
     void updateQuantityAfterOrdering(int ProductId, int q){

@@ -22,18 +22,16 @@ abstract class Product {
     public float getPrice(){
         return price;
     }
-
     public void setStockQuantity(int stockQuantity) {
         this.Quantity = stockQuantity;
     }
+    public abstract String displayInfo();
+    public abstract void updatePrice(float newPrice);
 
-    @Override
-    public abstract  String toString();
 }
+class Jackets extends Product  {
 
-class Jackets extends Product {
     protected String size;
-
     public Jackets(int id, String name, float price, int Quantity, String size) {
         super(id, name, price, Quantity);
         this.size = size;
@@ -45,7 +43,7 @@ class Jackets extends Product {
     }
 
     @Override
-    public String toString() {
+    public String displayInfo() {
         return "{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
@@ -53,21 +51,30 @@ class Jackets extends Product {
                 ",size= "+size+
                 '}';
     }
+    @Override
+    public void updatePrice(float newPrice) {
+        this.price=newPrice;
+    }
 }
-class Phone extends Product{
+class Phone extends Product {
     protected String brand;
     public Phone(int id, String name, float price, int Quantity, String brand){
         super(id,name,price,Quantity);
         this.brand=brand;
     }
     @Override
-    public String toString() {
+    public String displayInfo() {
         return "{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ",Brand= " + brand +
                 '}';
+    }
+
+    @Override
+    public void updatePrice(float newPrice) {
+        this.price=newPrice;
     }
 
 }
