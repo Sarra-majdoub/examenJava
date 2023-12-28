@@ -10,15 +10,12 @@ shopping cart operations and payment processing.
 
 # Design Decisions
 ### 1. Object-Oriented Programming (OOP) Implementation
-The project follows OOP principles to enhance code organization :
+ The project follows OOP principles to enhance code organization :
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;Inheritance: create a hierarchy 
-of product types, with an abstract Product class 
-serving as the base for specific categories like
-'Phone' and 'Jackets'.
-##### &nbsp;&nbsp;&nbsp;&nbsp;Polymorphism: treating 
-objects of derived classes uniformly 
-promoting flexibility and extensibility
+##### &nbsp;&nbsp;&nbsp;&nbsp; Inheritance:  create a hierarchy of product types, with an abstract Product class serving as the base for specific categories like'Phone' and 'Jackets'.
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;Polymorphism: treating objects of derived classes uniformly promoting flexibility and extensibility
+
 ### 2.Optional Features Implemented 
 #### a.Discounts 
 &nbsp;&nbsp; Introduced a 'Order'
