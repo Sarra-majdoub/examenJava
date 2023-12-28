@@ -2,7 +2,7 @@
 # E-commerce console application 
 #### The e-commerce console application is a Java-based platform that emulates important aspects of  online shopping platforms.
 #### This application has functions such as user authentication, product management, shopping cart operation, and payment processing. 
-## design decisions 
+## design decisions  
 ### 1.  Implementation of object-oriented programming (OOP). 
 &nbsp;&nbsp; The project follows OOP principles to improve code organization :
 
