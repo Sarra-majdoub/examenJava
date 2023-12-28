@@ -82,12 +82,10 @@ public class App {
                     System.out.println("your total amount is :"+shoppingCart.totalAmount() );
                     break;
                 case 9:
-                    //allow admins to manage products
-                case 10:
-                    exit();
+                       exit();
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again, choose : 1 , 2 , 3 , 4 , 5 , 6 , 7  ou 8 ");
+                    System.out.println("Invalid choice. Please try again, choose : 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 ou 9 ");
             }
         }
     }
