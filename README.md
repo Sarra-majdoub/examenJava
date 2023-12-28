@@ -6,9 +6,9 @@
 ### 1.  Implementation of object-oriented programming (OOP). 
 &nbsp;&nbsp; The project follows OOP principles to improve code organization :
 
-&nbsp;&nbsp;&nbsp;&nbsp; Inheritance: Create a hierarchy of product types using an abstract product class  as the basis for a specific category, such as "phone" or "jacket".
+&nbsp;&nbsp;&nbsp;&nbsp;##### Inheritance: Create a hierarchy of product types using an abstract product class  as the basis for a specific category, such as "phone" or "jacket".
 
-&nbsp;&nbsp;&nbsp;&nbsp; Polymorphism: Treating objects in derived classes in a consistent manner, promoting flexibility and extensibility. 
+&nbsp;&nbsp;&nbsp;&nbsp;##### Polymorphism: Treating objects in derived classes in a consistent manner, promoting flexibility and extensibility. 
 
 ## 2. Implementation of optional functions 
 ### a.Discount 
