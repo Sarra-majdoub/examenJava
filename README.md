@@ -1,32 +1,19 @@
-# E-commerce Console Application
 
-The E-commerce Console
-Application is a Java-based
-platform emulating essential 
-aspects of an online shopping platform .
-The application incorporates features such as user
-authentication, product management, 
-shopping cart operations and payment processing.
+# E-commerce console application 
+#### The e-commerce console application is a Java-based platform that emulates important aspects of  online shopping platforms.
+#### This application has functions such as user authentication, product management, shopping cart operation, and payment processing. 
+## design decisions 
+### 1.  Implementation of object-oriented programming (OOP). 
+&nbsp;&nbsp; The project follows OOP principles to improve code organization :
 
-# Design Decisions
-### 1. Object-Oriented Programming (OOP) Implementation
- The project follows OOP principles to enhance code organization :
+&nbsp;&nbsp; Inheritance: Create a hierarchy of product types using an abstract product class  as the basis for a specific category, such as "phone" or "jacket." Polymorphism: Treating objects in derived classes in a consistent manner, promoting flexibility and extensibility. 
 
-##### &nbsp;&nbsp;&nbsp;&nbsp; Inheritance:  create a hierarchy of product types, with an abstract Product class serving as the base for specific categories like'Phone' and 'Jackets'.
+## 2. Implementation of optional functions 
+### a.Discount 
+&nbsp;&nbsp; Introduces an Order class that manages the user's purchases and provides discounts based on the code provided. 
+### b. Shipping options 
+&nbsp;&nbsp; Introduces a "Shipping" class that applies user-specified shipping options and adds  shipping costs to  cart. 
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;Polymorphism: treating objects of derived classes uniformly promoting flexibility and extensibility
-
-### 2.Optional Features Implemented 
-#### a.Discounts 
-&nbsp;&nbsp; Introduced a 'Order'
-class that manages
-user's purchases and apply a discount
-based on the code provided.
-#### b.Shipping Options
-&nbsp;&nbsp;Introduces a 'Shipping'
-class that applies the shipping option 
-provided byt the user and adds the shipping cost
-to the cart.
 ## Project Structure
 The project is organized into several 
 classes,each focusing on specific
@@ -53,7 +40,6 @@ for their respective
 product types.
 
 ## How to Run
-
 ```bash
 # Clone the repository
 git clone https://github.com/Sarra-majdoub/examenJava.git
